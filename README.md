@@ -2,6 +2,7 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Özür Dilerim Sevgilim</title>
   <style>
     body {
@@ -9,11 +10,12 @@
       padding: 0;
       font-family: "Poppins", sans-serif;
       background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-      min-height: 100vh;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       overflow: hidden;
+      position: relative;
     }
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
@@ -29,13 +31,15 @@
       justify-content: center;
       align-items: center;
       z-index: 9999;
-      animation: fadeOut 4s forwards;
+      animation: fadeOut 3s forwards;
     }
     .intro h2 {
-      font-size: 3em;
+      font-size: 2.2em;
       color: #fff;
-      text-shadow: 0 0 20px rgba(255,255,255,0.9);
-      animation: zoom 4s ease-in-out;
+      text-shadow: 0 0 15px rgba(255,255,255,0.9);
+      animation: zoom 3s ease-in-out;
+      text-align: center;
+      padding: 0 10px;
     }
     @keyframes zoom {
       0% { transform: scale(0.5); opacity: 0; }
@@ -48,61 +52,61 @@
       100% { display: none; }
     }
 
+    /* Ana container */
     .container {
       text-align: center;
-      background: rgba(255,255,255,0.2);
-      padding: 30px;
-      border-radius: 25px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.3);
-      backdrop-filter: blur(12px);
-      max-width: 650px;
-      animation: fadeIn 2s ease-in-out;
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
       z-index: 1;
     }
+
     h1 {
-      font-size: 2.8em;
+      font-size: 1.8em;
       color: #fff;
-      margin-bottom: 15px;
+      margin: 0;
       font-weight: 700;
       text-shadow: 0 0 12px rgba(255,255,255,0.8);
     }
+
     p {
-      font-size: 1.3em;
+      font-size: 1em;
       color: #fff;
-      margin-bottom: 10px;
+      margin: 0;
       font-weight: 400;
+      text-align: center;
     }
+
     .poem {
-      font-size: 1.2em;
+      font-size: 0.95em;
       color: #fff;
       font-style: italic;
-      white-space: pre-line;
-      margin-top: 15px;
-      line-height: 1.6;
+      text-align: center;
+      margin: 0;
     }
+
     .video {
-      margin-top: 20px;
-      border-radius: 20px;
+      width: 180px;
+      height: 320px;
+      border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-      width: 250px;
-      height: 450px;
-      margin-left:auto;
-      margin-right:auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
     }
+
     .heart {
       position: absolute;
       color: rgba(255, 0, 100, 0.8);
-      font-size: 22px;
-      animation: floatUp 7s linear infinite;
+      font-size: 18px;
+      animation: floatUp 6s linear infinite;
     }
     @keyframes floatUp {
       0% { transform: translateY(100vh) scale(0.5); opacity: 1; }
       100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
-    }
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: scale(0.8); }
-      100% { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
@@ -113,27 +117,12 @@
   </div>
 
   <div class="container">
-    <h1>Özür Dilerim Sevgilim ❤️</h1>
-
-    <p>Seni üzdüğüm için çok pişmanım...</p>
-    <p>Ne olur affet beni, sensiz hayat eksik 💔</p>
-    <p>Kalbim sadece sana ait...</p>
-
-    <div class="poem">
-      Sensiz olmaz, yüreğim daralır,<br>
-      Canıma kıyarım, seni üzmektense…<br>
-      Gözlerim dolar, kalbim ağlar,<br>
-      Çünkü senin sevginle hayat var… ❤️<br><br>
-      Her nefesimde adın yankılanır,<br>
-      Kalbimde tek taht kuran sensin,<br>
-      Affet beni, aşkım, ne olur,<br>
-      Sensiz ben, ben değilim…
-    </div>
-
+    <h1>Özür Dilerim ❤️</h1>
+    <p>Sensiz hayat eksik…</p>
+    <div class="poem">Canıma kıyarım, seni üzmektense…</div>
     <div class="video">
-      <iframe width="250" height="450"
+      <iframe width="180" height="320"
         src="https://www.youtube.com/embed/lk95g7LjZ6E?autoplay=1&mute=1&loop=1&playlist=lk95g7LjZ6E"
-        title="YouTube Shorts"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen>
@@ -147,9 +136,9 @@
       heart.classList.add("heart");
       heart.innerHTML = "❤️";
       heart.style.left = Math.random() * window.innerWidth + "px";
-      heart.style.fontSize = Math.random() * 25 + 15 + "px";
+      heart.style.fontSize = Math.random() * 20 + 12 + "px";
       document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 7000);
+      setTimeout(() => heart.remove(), 6000);
     }
     setInterval(createHeart, 400);
   </script>

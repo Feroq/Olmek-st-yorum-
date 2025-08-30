@@ -51,9 +51,10 @@
   }
 
   .video {
-    width: 200px;
-    height: 360px;
-    border-radius: 15px;
+    width: 100%;
+    max-width: 360px;
+    height: 202px; /* 16:9 oranı */
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 0 15px rgba(0,0,0,0.5);
     margin-top: 10px;
@@ -74,7 +75,7 @@
     h1 { font-size: 1.6em; }
     p { font-size: 0.9em; }
     .poem { font-size: 0.85em; }
-    .video { width: 180px; height: 320px; }
+    .video { max-width: 280px; height: 157px; }
   }
 </style>
 </head>
@@ -93,10 +94,10 @@
   </div>
 
   <div class="video">
-    <iframe width="200" height="360"
-      src="https://www.youtube.com/embed/lk95g7LjZ6E?autoplay=1&mute=1&loop=1&playlist=lk95g7LjZ6E"
-      frameborder="0"
-      allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+    <iframe width="100%" height="100%" 
+      src="https://www.youtube.com/embed/lk95g7LjZ6E" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
       allowfullscreen>
     </iframe>
   </div>
